@@ -5,9 +5,15 @@ const color4 = document.getElementById('color4')
 const color5 = document.getElementById('color5')
 const brush = document.querySelector('.current-brush')
 const square = document.querySelectorAll('.square')
+const button = document.querySelector('.button')
 
 const changeBrush = function(x){
     brush.classList.replace(brush.classList[1], x.target.classList[1])
+}
+const clearAll = function(){
+    for (const item of square){
+        item.classList.replace(item.classList[1], 'color-5')
+    }
 }
 
 for (const item of square){
@@ -22,6 +28,7 @@ color2.addEventListener('click', changeBrush)
 color3.addEventListener('click', changeBrush)
 color4.addEventListener('click', changeBrush)
 color5.addEventListener('click', changeBrush)
+button.addEventListener('click', clearAll)
 
 
 
